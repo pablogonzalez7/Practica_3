@@ -7,8 +7,7 @@ using namespace std;
 int main() {
     int metodo;
 
-    cout << "(1) Compresion y descompresion con RLE.\n"
-
+    cout << "(1) Compresion y descompresion con RLE.\n";
 
     cout << "Ingrese un numero para seleccionar el metodo a utilizar:" << endl;
     cin >> metodo;
