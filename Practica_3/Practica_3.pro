@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += \
         bits.cpp \
         doc.cpp \
+        funcionalidad.cpp \
         lz78.cpp \
         main.cpp \
         rle.cpp
@@ -13,5 +14,6 @@ SOURCES += \
 HEADERS += \
     bits.h \
     doc.h \
+    funcionalidad.h \
     lz78.h \
     rle.h
