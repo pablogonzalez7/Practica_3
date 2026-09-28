@@ -1,5 +1,4 @@
 #include "funcionalidad.h"
-
 #include "doc.h"
 #include "lz78.h"
 #include "rle.h"
@@ -8,6 +7,40 @@
 #include <fstream>
 #include <string>
 using namespace std;
+
+int leerEntero(const char prompt[]) {
+    char input[20];
+    int valido;
+    int numero;
+
+    while (true) {
+        cout << prompt;
+        cin >> input;
+        valido = 1;
+
+        int i = 0;
+        while (input[i] != '\0') {
+            if (input[i] < '0' || input[i] > '9'){
+                valido = 0;
+            }
+            i++;
+        }
+
+        if (valido == 1) {
+            numero = 0;
+            int j = 0;
+            while (input[j] != '\0') {
+                numero = numero * 10 + (input[j] - '0');
+                j++;
+            }
+            return numero;
+        }
+
+        cout << "Entrada invalida. Ingrese un numero entero.\n";
+    }
+}
+
+
 
 int pedirRotacion() {
     int n;

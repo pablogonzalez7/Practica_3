@@ -7,21 +7,19 @@
 using namespace std;
 
 int main() {
-    int metodo;
+    bool continuar = true;
 
     cout << "(1) Compresion y descompresion con RLE.\n"
-            "(2) Compresion y descompresion con LZ78 donde se elige la cadena de caracteres.\n"
+            "(2) Compresion y descompresion con LZ78 donde se elige la cadena.\n"
             "(3) Compresion y descompresion con LZ78 usando cadenas predeterminadas.\n"
             "(4) Encriptacion y desencriptacion con operaciones binarias.\n"
             "(5) Integracion desde archivo con RLE.\n"
             "(6) Integracion desde archivo con LZ78.\n"
-            "(0) Salir.\n";
+            "(7) Salir.\n";
 
-    cout << "Ingrese un numero para seleccionar el metodo a utilizar:" << endl;
-    cin >> metodo;
-    cin.ignore();
-
-    while (metodo > 0) {
+    while (continuar) {
+        int metodo = leerEntero("\nIngrese un numero para seleccionar el metodo: ");
+         cin.ignore();
         switch (metodo) {
         case 1: {
             string texto;
@@ -112,22 +110,23 @@ int main() {
 
             break;
         }
-        case 5: {
+        case 5:
             metRle();
             break;
-        }
-        case 6: {
+
+        case 6:
             metLz78();
             break;
-        }
+
+        case 7:
+            continuar = false;
+            cout << "Saliendo del programa...\n";
+            break;
+
         default:
-            cout << "Opcion no valida." << endl;
+            cout << "Opcion no valida. Ingrese un numero entre 1 y 7.\n";
             break;
         }
-
-        cout << "\nIngrese un numero para seleccionar el metodo a utilizar:" << endl;
-        cin >> metodo;
-        cin.ignore();
     }
 
     return 0;

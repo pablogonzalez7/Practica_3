@@ -4,6 +4,8 @@
 #include <fstream>
 using namespace std;
 
+int leerEntero(const char prompt[]);
+
 void escribirArchivoChar(ofstream& archivo, const char* contenido1, const char* contenido2,
                          int tamanio, const char* comprimido);
 void metRle();
